@@ -1,0 +1,155 @@
+/* Global Styling */
+body {
+  background-color: #0b0d10;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: flex-start; /* Align items to the start */
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative; /* Ensure pseudo-element is positioned properly */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 20px; /* Add padding to body */
+}
+
+/* Background Gradient */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Changed to 0 to cover the whole body */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px; /* Optional rounded corners */
+  background: linear-gradient(45deg, #008cff, #e100ff);
+  z-index: -1;
+}
+
+/* Container for Layout */
+.container {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto; /* Center container and add margin */
+  padding: 20px;
+  text-align: center;
+  color: #f0f0f0;
+  border-radius: 10px; /* Rounded corners for the container */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+  background-color: rgba(22, 26, 32, 0.85); /* Semi-transparent background */
+}
+
+/* Heading Styling */
+h1 {
+  margin: 20px 0;
+  font-size: 2em; /* Larger font size for the main title */
+  color: #008cff; /* Accent color */
+}
+
+/* Input Styling */
+input[type="file"] {
+  margin: 10px 0;
+  display: block;
+  width: 100%;
+  padding: 2px; /* Increased padding for better touch targets */
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Textarea Styling */
+textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 2px; /* Increased padding for better touch targets */
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+  resize: none;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Dropdown Select Styling */
+select {
+  width: 48%;
+  margin: 5px 1%;
+  padding: 12px; /* Increased padding for better touch targets */
+  background-color: #161a20;
+  border: 2px solid #2a2e35;
+  color: #f0f0f0;
+  border-radius: 10px;
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+/* Gradient Button Styling */
+button {
+  padding: 0.8em 1.5em; /* Reduced padding for smaller button */
+  background-color: #008cff; /* Primary button color */
+  border: none;
+  color: #fff;
+  border-radius: 30px; /* More pronounced rounded corners */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: box-shadow 0.4s ease, transform 0.2s ease, background-color 0.3s ease; /* Added background color transition */
+  margin-top: 20px; /* More spacing above the button */
+  width: 100%;
+  font-size: 0.9em; /* Reduced font size for the button */
+}
+
+/* Button Hover Effect */
+button:hover {
+  background-color: #e100ff; /* Change background color on hover */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+  transform: scale(1.05);
+}
+
+/* Video and Canvas Styling */
+video, canvas {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: none; /* Initially hidden */
+}
+
+/* Show video when active */
+.video-active {
+  display: block;
+}
+
+/* Loading Text */
+p {
+  margin: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  button {
+    padding: 0.7em 1.3em; /* Adjust button size on small screens */
+  }
+  
+  h1 {
+    font-size: 1.5em; /* Adjust heading size on small screens */
+  }
+
+  .container {
+    padding: 15px; /* Less padding on small screens */
+  }
+}
+
+/* Focus Styles */
+input[type="file"]:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: #008cff; /* Highlight border on focus */
+}
